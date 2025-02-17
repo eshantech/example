@@ -50,6 +50,35 @@
         <url-pattern>/DriverLoginController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>UpdateAvailabilityController</servlet-name>
+        <servlet-class>com.cab.controller.UpdateAvailabilityController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UpdateAvailabilityController</servlet-name>
+        <url-pattern>/UpdateAvailabilityController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UpdateLocationController</servlet-name>
+        <servlet-class>com.cab.controller.UpdateLocationController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UpdateLocationController</servlet-name>
+        <url-pattern>/UpdateLocationController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>EditDriverController</servlet-name>
+        <servlet-class>com.cab.controller.EditDriverController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>EditDriverController</servlet-name>
+        <url-pattern>/EditDriverController</url-pattern>
+    </servlet-mapping>
     
     
     
