@@ -18,19 +18,13 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        UserDAO userDao = new UserDAO();  // Corrected variable name
-        User user = userDao.authenticateUser(username, password);  // Ensure method exists
+        UserDAO userDao = new UserDAO();
+        User user = userDao.authenticateUser(username, password);
 
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            
-            // Redirect based on user role
-            if ("Admin".equals(user.getRole())) {
-                response.sendRedirect("adminDashboard.jsp");
-            } else {
-                response.sendRedirect("dashboard.jsp");
-            }
+            response.sendRedirect("UserController");  // Redirect to fetch full details
         } else {
             response.sendRedirect("login.jsp?error=Invalid Credentials");
         }

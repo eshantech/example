@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.cab.dao.DBConnection" %>
+<%@ page import="java.util.List, com.cab.dao.BookingDAO, com.cab.model.Booking" %>
+<%@ page import="com.cab.dao.UserDAO, com.cab.model.User" %>
 
 <%-- Check if the user is logged in --%>
 <%
@@ -150,6 +152,63 @@
     <input type="hidden" name="driverId" value="<%= driverId %>">
     <button type="submit">Edit Profile</button>
 </form>
+<h3>Pending Bookings</h3>
+<table border="1">
+    <tr>
+        <th>Pickup Location</th>
+        <th>Drop Location</th>
+        <th>Distance (km)</th>
+        <th>Price (LKR)</th>
+        <th>Actions</th>
+    </tr>
+    <%
+        try (Connection conn = DBConnection.getConnection()) {
+            String sql = "SELECT b.booking_id, b.pickup_location, b.drop_location, b.distance, b.price " +
+                         "FROM bookings b WHERE b.driver_id = ? AND b.status = 'Pending'";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, driverId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int bookingId = rs.getInt("booking_id");
+    %>
+    <tr>
+        <td><%= rs.getString("pickup_location") %></td>
+        <td><%= rs.getString("drop_location") %></td>
+        <td><%= rs.getDouble("distance") %></td>
+        <td><%= rs.getDouble("price") %></td>
+        <td>
+            <form action="BookingActionController" method="post" style="display:inline;">
+                <input type="hidden" name="bookingId" value="<%= bookingId %>">
+                <button type="submit" name="action" value="confirm">Confirm</button>
+                <button type="submit" name="action" value="cancel">Cancel</button>
+            </form>
+        </td>
+    </tr>
+    <% } } catch (Exception e) { e.printStackTrace(); } %>
+</table>
+
+<%-- Display Confirmed User Details --%>
+<%
+    User confirmedUser = (User) session.getAttribute("confirmedUser");
+    if (confirmedUser != null) {
+%>
+    <h3>Confirmed Booking Details</h3>
+    <table border="1">
+        <tr>
+            <td><b>User Name:</b></td>
+            <td><%= confirmedUser.getName() %></td>
+        </tr>
+        <tr>
+            <td><b>Mobile Number:</b></td>
+            <td><%= confirmedUser.getMobileNumber() %></td>
+        </tr>
+    </table>
+<%
+        // Clear the session attribute after displaying the details
+        session.removeAttribute("confirmedUser");
+    }
+%>
 
 </body>
 </html>

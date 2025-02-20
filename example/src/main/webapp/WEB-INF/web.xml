@@ -80,6 +80,38 @@
         <url-pattern>/EditDriverController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>com.cab.controller.UserController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/UserController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CompleteRideController</servlet-name>
+        <servlet-class>com.cab.controller.CompleteRideController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CompleteRideController</servlet-name>
+        <url-pattern>/CompleteRideController</url-pattern>
+    </servlet-mapping>
+     
+         <servlet>
+        <servlet-name>FeedbackController</servlet-name>
+        <servlet-class>com.cab.controller.FeedbackController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>FeedbackController</servlet-name>
+        <url-pattern>/FeedbackController</url-pattern>
+    </servlet-mapping>
+    
+
+    
     
     
     
