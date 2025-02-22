@@ -110,6 +110,28 @@
         <url-pattern>/FeedbackController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>SubmitFeedbackController</servlet-name>
+        <servlet-class>com.cab.controller.SubmitFeedbackController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>SubmitFeedbackController</servlet-name>
+        <url-pattern>/SubmitFeedbackController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>GenerateBillServlet</servlet-name>
+        <servlet-class>com.cab.controller.GenerateBillServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>GenerateBillServlet</servlet-name>
+        <url-pattern>/GenerateBillServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
 
     
     

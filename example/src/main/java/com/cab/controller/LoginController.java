@@ -24,7 +24,7 @@ public class LoginController extends HttpServlet {
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            response.sendRedirect("UserController");  // Redirect to fetch full details
+            response.sendRedirect("UserController");  
         } else {
             response.sendRedirect("login.jsp?error=Invalid Credentials");
         }
