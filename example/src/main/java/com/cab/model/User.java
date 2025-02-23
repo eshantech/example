@@ -29,7 +29,7 @@ public class User {
         this.gender = gender;
     }
 
-    // Getters and Setters
+    // Getter and Setter
     public int getUserId() { return userId; }
     public void setUserId(int userId) { this.userId = userId; }
 
