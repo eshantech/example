@@ -209,6 +209,56 @@
         session.removeAttribute("confirmedUser");
     }
 %>
+<h3>Completed Bookings</h3>
+<table border="1">
+    <tr>
+        <th>Booking ID</th>
+        <th>Pickup Location</th>
+        <th>Drop Location</th>
+        <th>Distance (km)</th>
+        <th>Price (LKR)</th>
+        <th>Completed Date</th>
+        <th>Completed Time</th>
+    </tr>
+    <%
+        double totalEarnings = 0;
+        double taxRate = 0.06; // 6% tax
+        double totalAfterTax = 0;
+
+        try (Connection conn = DBConnection.getConnection()) {
+            String sql = "SELECT booking_id, pickup_location, drop_location, distance, price, completed_date, completed_time FROM bookings WHERE driver_id = ? AND status = 'Completed'";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, driverId);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                double price = rs.getDouble("price");
+                double afterTax = price - (price * taxRate); // Deduct 6%
+                totalEarnings += price;
+                totalAfterTax += afterTax;
+    %>
+    <tr>
+        <td><%= rs.getInt("booking_id") %></td>
+        <td><%= rs.getString("pickup_location") %></td>
+        <td><%= rs.getString("drop_location") %></td>
+        <td><%= rs.getDouble("distance") %> km</td>
+        <td>
+             <%= price %> LKR <br>
+            <b>available (6% Tax)</b> <%= String.format("%.2f", afterTax) %> LKR
+        </td>
+        <td><%= rs.getDate("completed_date") %></td>
+        <td><%= rs.getTime("completed_time") %></td>
+    </tr>
+    <% 
+            }
+        } catch (Exception e) { e.printStackTrace(); } 
+    %>
+</table>
+<div style="position: absolute; top: 10px; right: 20px;">
+    <h3>Total Earnings: <%= totalEarnings %> LKR</h3>
+    <h3>company Tax 6% (Available Balance): <%= String.format("%.2f", totalAfterTax) %> LKR</h3>
+</div>
+
 
 </body>
 </html>
