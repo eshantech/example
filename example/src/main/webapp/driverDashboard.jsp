@@ -11,7 +11,7 @@
         response.sendRedirect("driverLogin.jsp?error=Please login first");
         return;
     }
-    int driverId = driverIdObj; // Now we are sure driverId is not null
+    int driverId = driverIdObj; // driverId is not null
 %>
 
 <!DOCTYPE html>
@@ -205,7 +205,7 @@
         </tr>
     </table>
 <%
-        // Clear the session attribute after displaying the details
+        // displaying the details
         session.removeAttribute("confirmedUser");
     }
 %>
