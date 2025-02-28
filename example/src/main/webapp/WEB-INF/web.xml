@@ -140,6 +140,16 @@
         <url-pattern>/UserEditController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <servlet-class>com.cab.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <url-pattern>/DeleteDriverController</url-pattern>
+    </servlet-mapping>
+    
 
     
     
