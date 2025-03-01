@@ -13,12 +13,96 @@
     }
     int driverId = driverIdObj; // driverId is not null
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Driver Dashboard</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    
+    <%-- 🚖 CSS Styling --%>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/taxi-bg.jpg') no-repeat center center/cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #ffcc00;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #ffcc00;
+            color: black;
+        }
+        .button {
+            padding: 8px 12px;
+            border: none;
+            background: black;
+            color: #ffcc00;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background: #ffcc00;
+            color: black;
+        }
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            animation: pulse 1.5s infinite;
+        }
+        .pending { background: orange; color: black; }
+        .completed { background: green; color: white; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .earnings-box {
+            background: #ffcc00;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+
+    <%-- 🚖 JavaScript --%>
     <script>
         function updateAvailability() {
             document.getElementById("availabilityForm").submit();
