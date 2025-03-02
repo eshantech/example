@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Login - Mega City Cab</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: Arial, sans-serif;
             background: url('images/Driver login.png') no-repeat center center/cover;
@@ -19,7 +19,7 @@
             color: #333;
         }
 
-        /* Login Container */
+        /* Login */
         .login-container {
             background: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -48,7 +48,7 @@
             font-size: 24px;
         }
 
-        /* Input Fields */
+        
         input {
             width: 90%;
             padding: 10px;
@@ -58,7 +58,7 @@
             font-size: 16px;
         }
 
-        /* Submit Button */
+        /* Button */
         button {
             background: black;
             color: #FFD700;
@@ -92,14 +92,14 @@
             text-decoration: underline;
         }
 
-        /* Error Message */
+        /* Message */
         .error-message {
             color: red;
             margin-top: 10px;
             font-size: 14px;
         }
 
-        /* Floating Taxi Animation */
+        /* Animation */
         .floating-taxi {
             position: absolute;
             top: -60px;
