@@ -14,7 +14,7 @@
     <title>Booking - Mega City Cab</title>
     <link rel="stylesheet" href="CSS/style.css">
     <style>
-        /* Taxi Theme Styling */
+        
         body {
             font-family: Arial, sans-serif;
             background: url('images/Background.png') no-repeat center center fixed;
@@ -74,7 +74,7 @@
             box-shadow: 0 0 5px #ffcc00;
         }
 
-        /* Table Styling */
+        /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -130,7 +130,7 @@
             color: #ffcc00;
         }
 
-        /* Taxi Animation */
+        /* Animation */
         .taxi {
             position: absolute;
             top: -40px;

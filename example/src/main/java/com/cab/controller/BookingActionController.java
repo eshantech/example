@@ -23,20 +23,20 @@ public class BookingActionController extends HttpServlet {
             BookingDAO bookingDAO = new BookingDAO();
 
             if ("confirm".equals(action)) {
-                // Update booking status
+                // booking status
                 bookingDAO.updateBookingStatus(bookingId, "Complete - Pending");
 
-                // Get user details
+                // user details
                 int userId = bookingDAO.getUserIdByBookingId(bookingId);
                 UserDAO userDAO = new UserDAO();
                 User user = userDAO.getUserById(userId);
 
-                // Get current date and time
+                // date and time
                 LocalDateTime now = LocalDateTime.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                 String orderDateTime = now.format(formatter);
 
-                // Redirect to confirmation page with details
+                //confirmation page details
                 response.sendRedirect("driverBookConfirm.jsp?bookingId=" + bookingId + 
                                       "&name=" + user.getName() + 
                                       "&number=" + user.getMobileNumber() + 

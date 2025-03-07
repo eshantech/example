@@ -28,7 +28,7 @@ public class BookingDAO {
         return false;
     }
 
-    // Get bookings by user ID
+    // bookings by user ID
     public List<Booking> getUserBookings(int userId) {
         List<Booking> bookings = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection()) {
@@ -54,7 +54,7 @@ public class BookingDAO {
         return bookings;
     }
 
-    // Get bookings by driver ID
+    // bookings by driver ID
     public List<Booking> getDriverBookings(int driverId, String status) {
         List<Booking> bookings = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection()) {
@@ -95,7 +95,7 @@ public class BookingDAO {
         }
         return false;
     }
-    // Get user ID by booking ID
+    // user ID by booking ID
     public int getUserIdByBookingId(int bookingId) {
         int userId = -1;
         try (Connection conn = DBConnection.getConnection()) {
@@ -112,7 +112,7 @@ public class BookingDAO {
         return userId;
     }
 
-    // Get booking details by ID
+    // booking details by ID
     public Booking getBookingById(int bookingId) {
         Booking booking = null;
         try (Connection conn = DBConnection.getConnection()) {

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Login - Mega City Cab</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
-        
         body {
             font-family: Arial, sans-serif;
             background: url('images/Driver login.png') no-repeat center center/cover;
@@ -19,7 +19,6 @@
             color: #333;
         }
 
-        /* Login */
         .login-container {
             background: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -31,7 +30,6 @@
             position: relative;
         }
 
-        /* Floating Animation */
         @keyframes fadeIn {
             from {
                 transform: translateY(-30px);
@@ -48,7 +46,6 @@
             font-size: 24px;
         }
 
-        
         input {
             width: 90%;
             padding: 10px;
@@ -58,7 +55,6 @@
             font-size: 16px;
         }
 
-        /* Button */
         button {
             background: black;
             color: #FFD700;
@@ -76,7 +72,6 @@
             color: black;
         }
 
-        /* Sign Up Link */
         p {
             margin-top: 10px;
             font-size: 14px;
@@ -92,14 +87,12 @@
             text-decoration: underline;
         }
 
-        /* Message */
         .error-message {
             color: red;
             margin-top: 10px;
             font-size: 14px;
         }
 
-        /* Animation */
         .floating-taxi {
             position: absolute;
             top: -60px;
@@ -122,9 +115,8 @@
         <img src="images/customer login page icon.png" alt="Taxi Icon" class="floating-taxi">
         <h2>Driver Login</h2>
 
-        <%-- Display error message if login fails --%>
         <% if (request.getParameter("error") != null) { %>
-            <p class="error-message">Invalid Username or Password</p>
+            <p class="error-message">Invalid Username, Password, or reCAPTCHA</p>
         <% } %>
 
         <form action="DriverLoginController" method="post">
@@ -134,6 +126,9 @@
             <label>Password:</label>
             <input type="password" name="password" required placeholder="Enter your password">
             
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="6Lc7b-sqAAAAAHY-zPfyFTJ-vLFG5X-tIn9c0Lub"></div>
+
             <button type="submit">Login</button>
 
             <p>Don't have an account? <a href="registerDriver.jsp">Sign Up</a></p>

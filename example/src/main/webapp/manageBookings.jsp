@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Manage Bookings - Mega City Cab</title>
 
-    <%-- 🚖 CSS Styling (Taxi-Themed) --%>
+    <%-- CSS Styling --%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@
             text-shadow: 2px 2px 4px black;
         }
 
-        /* 🚕 Responsive Table Wrapper */
+        /* Responsive Table Wrapper */
         .table-container {
             width: 100%;
             overflow-x: auto;
@@ -45,7 +45,7 @@
             border: 1px solid black;
             padding: 12px;
             text-align: center;
-            white-space: nowrap; /* Prevents text wrapping */
+            white-space: nowrap; /* wrapping */
         }
         th {
             background: black;

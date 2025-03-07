@@ -150,7 +150,16 @@
         <url-pattern>/DeleteDriverController</url-pattern>
     </servlet-mapping>
     
-
+<servlet>
+        <servlet-name>OnlinePaymentController</servlet-name>
+        <servlet-class>com.cab.controller.OnlinePaymentController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>OnlinePaymentController</servlet-name>
+        <url-pattern>/OnlinePaymentController</url-pattern>
+    </servlet-mapping>
+    
     
     
     

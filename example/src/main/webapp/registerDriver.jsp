@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Registration - Mega City Cab</title>
     <style>
-        /* General Styles */
+        
         body {
             font-family: Arial, sans-serif;
             background: url('images/driver registration.png') no-repeat center center/cover;
@@ -20,7 +20,7 @@
             overflow: hidden;
         }
 
-        /* Registration Container */
+        
         .register-container {
             background: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -34,7 +34,7 @@
             position: relative;
         }
 
-        /* Fade In Animation */
+        /* Fade Animation */
         @keyframes fadeIn {
             from {
                 transform: translateY(-30px);
@@ -51,7 +51,7 @@
             font-size: 24px;
         }
 
-        /* Input Fields */
+        
         input, select {
             width: 90%;
             padding: 10px;
@@ -61,7 +61,7 @@
             font-size: 16px;
         }
 
-        /* Submit Button */
+        /* Button */
         button {
             background: black;
             color: #FFD700;
@@ -79,7 +79,7 @@
             color: black;
         }
 
-        /* Sign In Link */
+        
         p {
             margin-top: 10px;
             font-size: 14px;
@@ -95,7 +95,7 @@
             text-decoration: underline;
         }
 
-        /* Scrollable Form */
+        
         .register-container::-webkit-scrollbar {
             width: 8px;
         }
@@ -105,7 +105,7 @@
             border-radius: 10px;
         }
 
-        /* Floating Taxi Animation */
+        
         .floating-taxi {
             position: absolute;
             top: -60px;
