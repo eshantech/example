@@ -126,7 +126,7 @@
             <label>Password:</label>
             <input type="password" name="password" required placeholder="Enter your password">
             
-            <!-- Google reCAPTCHA -->
+            <!-- Google RECAPTCHA -->
             <div class="g-recaptcha" data-sitekey="6Lc7b-sqAAAAAHY-zPfyFTJ-vLFG5X-tIn9c0Lub"></div>
 
             <button type="submit">Login</button>

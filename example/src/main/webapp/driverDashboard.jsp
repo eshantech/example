@@ -11,7 +11,7 @@
         response.sendRedirect("driverLogin.jsp?error=Please login first");
         return;
     }
-    int driverId = driverIdObj; // driverId is not null
+    int driverId = driverIdObj; // not null
 %>
 <!DOCTYPE html>
 <html>

@@ -56,7 +56,7 @@ public class DriverLoginController extends HttpServlet {
         }
     }
 
-    // Function to verify Google reCAPTCHA
+    // Google reCAPTCHA
     private boolean verifyRecaptcha(String gRecaptchaResponse) throws IOException {
         String url = "https://www.google.com/recaptcha/api/siteverify";
         String params = "secret=" + SECRET_KEY + "&response=" + gRecaptchaResponse;

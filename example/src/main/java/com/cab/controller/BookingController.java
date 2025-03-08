@@ -24,7 +24,7 @@ public class BookingController extends HttpServlet {
             double distance = Double.parseDouble(request.getParameter("distance"));
             double price = Math.ceil(distance / 5) * 90.30;
             
-            // status "Pending"
+            // status
             Booking booking = new Booking(userId, driverId, pickupLocation, dropLocation, distance, price, "Pending");
             BookingDAO bookingDAO = new BookingDAO();
             
