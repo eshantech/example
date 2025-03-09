@@ -5,7 +5,7 @@
 <head>
     <title>Manage Users</title>
     <style>
-        /* 🚀 General Styling */
+        /* General Styling */
         body {
             font-family: 'Poppins', sans-serif;
             background: url('images/Background.png') no-repeat center center/cover;
@@ -19,7 +19,7 @@
             text-shadow: 2px 2px 4px black;
         }
 
-        /* 🎨 Form Styling */
+        /* Form */
         form {
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -52,7 +52,7 @@
             color: black;
         }
 
-        /* 📋 Table Styling */
+        /* Table Styling */
         .table-container {
             width: 90%;
             margin: auto;
@@ -84,7 +84,7 @@
             transition: 0.3s;
         }
 
-        /* 🎭 Animations */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -96,7 +96,7 @@
     </style>
 
     <script>
-        // 📌 Search Function
+        // Search Function
         function searchUsers() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let table = document.getElementById("usersTable");
@@ -108,7 +108,7 @@
             }
         }
 
-        // 📌 Copy to Clipboard Function
+        // Clipboard
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 alert("Copied: " + text);
@@ -138,14 +138,14 @@
         }
     %>
 
-    <!-- 🔍 Search Form -->
+    <!-- Search Form -->
     <form action="UserManageServlet" method="get">
         <input type="text" id="searchInput" name="searchQuery" placeholder="Search by Username or Email" onkeyup="searchUsers()">
         <input type="hidden" name="action" value="search">
         <button type="submit">Search</button>
     </form>
 
-    <!-- ➕ Add User Form -->
+    <!-- Add User -->
     <form action="UserManageServlet" method="post">
         <h2>Add User</h2>
         <input type="hidden" name="action" value="add">
@@ -163,7 +163,7 @@
         <button type="submit">Add User</button>
     </form>
 
-    <!-- 📄 Existing Users Table -->
+    <!-- Existing Users Table -->
     <h2>Existing Users</h2>
     <div class="table-container">
         <table id="usersTable">
@@ -179,7 +179,7 @@
                 UserManageDAO userDao = new UserManageDAO();
                 List<User> userList = (List<User>) request.getAttribute("userList");
                 if (userList == null) {
-                    userList = userDao.getAllUsers(); // Get all users if no search results
+                    userList = userDao.getAllUsers(); // Get all search results
                 }
 
                 for (User user : userList) {

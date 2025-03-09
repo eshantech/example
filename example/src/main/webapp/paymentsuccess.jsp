@@ -13,7 +13,7 @@
     int bookingId = Integer.parseInt(request.getParameter("bookingId"));
 %>
 
-<!-- Automatically send the email -->
+<!-- Auto send email -->
 <form action="SendBillEmailServlet" method="post">
     <input type="hidden" name="bookingId" value="<%= bookingId %>">
     <button type="submit">Send Invoice via Email</button>

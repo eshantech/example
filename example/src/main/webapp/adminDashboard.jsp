@@ -4,7 +4,7 @@
 <head>
     <title>Admin Dashboard - Mega City Cab</title>
 
-    <%-- 🚖 CSS Styling (Taxi-Themed) --%>
+    <%--  CSS Styling --%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,7 +66,7 @@
         }
     </style>
 
-    <%-- 🚖 JavaScript for Animation on Hover --%>
+    <%--  JavaScript for Animation --%>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let links = document.querySelectorAll("a");

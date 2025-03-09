@@ -4,7 +4,7 @@
 <%
     List<BillingDetails> billingList = (List<BillingDetails>) request.getAttribute("billingList");
 
-    // Calculate total system profit (sum of all system taxes)
+    // system profit
     double totalSystemProfit = 0;
     if (billingList != null) {
         for (BillingDetails details : billingList) {
@@ -18,7 +18,7 @@
 <head>
     <title>Admin Billing System</title>
     <style>
-        /* 🚀 General Styling */
+        
         body {
             font-family: 'Poppins', sans-serif;
             background: url('images/Background.png') no-repeat center center/cover;
@@ -32,7 +32,7 @@
             text-shadow: 2px 2px 4px black;
         }
 
-        /* 🏆 Header Styling */
+        
         .header {
             display: flex;
             justify-content: space-between;
@@ -50,7 +50,7 @@
             color: #ffcc00;
         }
 
-        /* 🔍 Search Bar */
+        
         .search-bar {
             margin-bottom: 20px;
             animation: fadeInUp 0.8s ease-in-out;
@@ -77,7 +77,7 @@
             color: black;
         }
 
-        /* 📜 Table Styling */
+        
         table {
             width: 100%;
             border-collapse: collapse;
@@ -101,7 +101,7 @@
             transition: 0.3s;
         }
 
-        /* 🗑 Delete Button */
+        
         .delete-btn {
             background: red;
             color: white;
@@ -115,7 +115,7 @@
             background: darkred;
         }
 
-        /* 🎭 Animations */
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -133,7 +133,7 @@
         <div class="total-profit">Total System Profit: <%= totalSystemProfit %> LKR</div>
     </div>
 
-    <!-- 🔍 Search Bar -->
+    <!--  Search Bar -->
     <div class="search-bar">
         <form action="AdminBillingController" method="get">
             <input type="text" name="search" placeholder="Search by Driver ID or Name">
@@ -141,7 +141,7 @@
         </form>
     </div>
 
-    <!-- 📊 Billing Table -->
+    <!--  Billing Table -->
     <table>
         <tr>
             <th>Driver ID</th>

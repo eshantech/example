@@ -4,7 +4,7 @@
 <head>
     <title>Admin Login - Mega City Cab</title>
 
-    <%-- 🚖 CSS Styling (Taxi-Themed) --%>
+    <%--  CSS Styling  --%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,7 +82,7 @@
         }
     </style>
 
-    <%-- 🚖 JavaScript for Input Focus Effects --%>
+    <%--  JavaScript for Input Focus Effects --%>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let inputs = document.querySelectorAll("input");
